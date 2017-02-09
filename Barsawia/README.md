@@ -1,9 +1,10 @@
 # Barsawia
-#### MushClient plugins/scripts for Barsawia LPMud
-[Barsawia: official website](http://barsawia.pl/)
+#### MushClient - skrypty/pluginy dla muda Barsawia
+[Barsawia: oficjalna strona](http://barsawia.pl/)
 
-List of files:
+List plików
 
-1. ...
-2. ...
+Plik | zastosowanie
+-----|-------------
+scinka.xml | Ułatwienie ścinania drzew
 
