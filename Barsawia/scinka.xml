@@ -151,19 +151,6 @@
    other_back_colour="black"
   >
   </trigger>
-  
- <!-- <trigger
-   enabled="y"
-   lines_to_match="8"
-   match="^(W tej czesci lasu dostrzegasz nastepujace nadajace sie do scinki drzewa:|Sposrod otaczajacych cie drzew, nastepujace nadaja sie do scinki:)$((?s)(.*))^$"
-   multi_line="y"
-   regexp="y"
-   send_to="2"
-   sequence="100"
-      script="drzewa"
-  >
-
-  </trigger> -->
 
  <trigger
    enabled="y"
@@ -236,39 +223,7 @@
    other_back_colour="black"
   >
   </trigger>
-
-
-<!--
- <trigger
-   enabled="n"
-   group="pending"
-   keep_evaluating="y"
-   match="^(.+)$"
-   omit_from_output="n"
-   regexp="y"
-   repeat="y"
-   name="drzewa"
-   script="jakie_drzewa"
-   other_text_colour="black"
-   other_back_colour="black"
-  >
-  </trigger> 
-  
- <trigger
-   enabled="n"
-   group="pending"
-   keep_evaluating="y"
-   match="^(>.*|)$"
-   omit_from_output="n"
-   regexp="y"
-   repeat="y"
-   name="drzewa_stopper"
-   script="wylacz_triggery"
-   other_text_colour="black"
-   other_back_colour="black"
-  >
-  </trigger>
-  -->
+	
 </triggers>
 
 <aliases>
