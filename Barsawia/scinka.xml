@@ -174,7 +174,7 @@
    enabled="y"
    group="test"
    keep_evaluating="y"
-   match="^(Wraz ze spadajacymi na lesne runo, ostatnimi fragmentami konarow i upartej kory konczysz prace nad solidnie ociosana (.*?)\.$|(.*?)Kloda zostala calkowicie ociosana\.$)"
+   match="^(.*?)(Wraz ze spadajacymi na lesne runo, ostatnimi fragmentami konarow i upartej kory konczysz prace nad solidnie ociosana (.*?)\.$|(.*?)Kloda zostala calkowicie ociosana\.$)"
    omit_from_output="n"
    regexp="y"
    repeat="y"
@@ -192,7 +192,7 @@
    enabled="y"
    group="test"
    keep_evaluating="y"
-   match="^Sprawnymi pociagnieciami (.*?) ostatecznie doczyszczasz powierzchnie solidnie ociosanej klody (.*?)\.$"
+   match="^(.*?)Sprawnymi pociagnieciami (.*?) ostatecznie doczyszczasz powierzchnie solidnie ociosanej klody (.*?)\.$"
    omit_from_output="n"
    regexp="y"
    repeat="y"
@@ -210,7 +210,7 @@
    enabled="y"
    group="test"
    keep_evaluating="y"
-   match="^Ostatnimi ruchami rak dzierzacych (.*?) doczyszczasz solidnie ociosana klode (.*?), konczac prace nad powalona kloda.$"
+   match="^(.*?)Ostatnimi ruchami rak dzierzacych (.*?) doczyszczasz solidnie ociosana klode (.*?), konczac prace nad powalona kloda.$"
    omit_from_output="n"
    regexp="y"
    repeat="y"
@@ -223,7 +223,26 @@
    other_back_colour="black"
   >
   </trigger>
-	
+  
+  <trigger
+   enabled="y"
+   group="test"
+   keep_evaluating="y"
+   match="^(.*?)Konczysz prace i z satysfakcja spogladasz na jej owoc\.$"
+   omit_from_output="n"
+   regexp="y"
+   repeat="y"
+   multi_line="y"
+   variable="funkcyjny"
+   lines_to_match="2"
+   send_to="12"
+   script="koniec_pracy2"
+   other_text_colour="black"
+   other_back_colour="black"
+  >
+  </trigger>
+
+  
 </triggers>
 
 <aliases>
@@ -293,53 +312,61 @@ end sub
 
 sub jakie_drzewa(a,output,array)
 	'world.note "jeah"
-	dim lista(21)
-	lista(0) = " cis"
-	lista(1) = " magnolia"
-	lista(2) = " tuja"
-	lista(3) = " grab"
-	lista(4) = " jesion"
-	lista(5) = " modrzew"
-	lista(6) = " wiaz"
-	lista(7) = " kalopanaks"
-	lista(8) = " jarzab"
-	lista(9) = " olsza"
-	lista(10) = " klon"
-	lista(11) = " topola"
-	lista(12) = " kasztan"
-	lista(13) = " jodla"
-	lista(14) = " buk"
-	lista(15) = " osika"
-	lista(16) = " wierzba"
-	lista(17) = " lipa"
-	lista(18) = " sosna"
-	lista(19) = " swierk"
-	lista(20) = " brzoza"
-	lista(21) = " dab"
+	dim lista(25)
+	lista(0) = " cedr"
+	lista(1) = " hebanowiec"
+	lista(2) = " sekwoja"
+	lista(3) = " xylech"
+	lista(4) = " cis"
+	lista(5) = " magnolia"
+	lista(6) = " tuja"
+	lista(7) = " grab"
+	lista(8) = " wiaz"
+	lista(9) = " modrzew"
+	lista(10) = " jesion"
+	lista(11) = " kalopanaks"
+	lista(12) = " jarzab"
+	lista(13) = " olsza"
+	lista(14) = " klon"
+	lista(15) = " topola"
+	lista(16) = " kasztan"
+	lista(17) = " jodla"
+	lista(18) = " buk"
+	lista(19) = " osika"
+	lista(20) = " wierzba"
+	lista(21) = " lipa"
+	lista(22) = " sosna"
+	lista(23) = " swierk"
+	lista(24) = " brzoza"
+	lista(25) = " dab"
 	
-	dim zetnij(21)
-	zetnij(0) = "zetnij cis"
-	zetnij(1) = "zetnij magnolie"
-	zetnij(2) = "zetnij tuje"
-	zetnij(3) = "zetnij grab"
-	zetnij(4) = "zetnij jesion"
-	zetnij(5) = "zetnij modrzew"
-	zetnij(6) = "zetnij wiaz"
-	zetnij(7) = "zetnij kalopanaks"
-	zetnij(8) = "zetnij jarzab"
-	zetnij(9) = "zetnij olsze"
-	zetnij(10) = "zetnij klon"
-	zetnij(11) = "zetnij topole"
-	zetnij(12) = "zetnij kasztan"
-	zetnij(13) = "zetnij jodle"
-	zetnij(14) = "zetnij buk"
-	zetnij(15) = "zetnij osike"
-	zetnij(16) = "zetnij wierzbe"
-	zetnij(17) = "zetnij lipe"
-	zetnij(18) = "zetnij sosne"
-	zetnij(19) = "zetnij swierk"
-	zetnij(20) = "zetnij brzoze"
-	zetnij(21) = "zetnij dab"
+	dim zetnij(25)
+	zetnij(0) = "zetnij cedr"
+	zetnij(1) = "zetnij hebanowca"
+	zetnij(2) = "zetnij sekwoje"
+	zetnij(3) = "zetnij xylech"
+	zetnij(4) = "zetnij cis"
+	zetnij(5) = "zetnij magnolie"
+	zetnij(6) = "zetnij tuje"
+	zetnij(7) = "zetnij grab"
+	zetnij(8) = "zetnij wiaz"
+	zetnij(9) = "zetnij modrzew"
+	zetnij(10) = "zetnij jesion"
+	zetnij(11) = "zetnij kalopanaks"
+	zetnij(12) = "zetnij jarzab"
+	zetnij(13) = "zetnij olsze"
+	zetnij(14) = "zetnij klon"
+	zetnij(15) = "zetnij topole"
+	zetnij(16) = "zetnij kasztan"
+	zetnij(17) = "zetnij jodle"
+	zetnij(18) = "zetnij buk"
+	zetnij(19) = "zetnij osike"
+	zetnij(20) = "zetnij wierzbe"
+	zetnij(21) = "zetnij lipe"
+	zetnij(22) = "zetnij sosne"
+	zetnij(23) = "zetnij swierk"
+	zetnij(24) = "zetnij brzoze"
+	zetnij(25) = "zetnij dab"
 
 	dim tmp
 	dim b
@@ -375,6 +402,11 @@ sub koniec_pracy(a,output, array)
 		world.colournote "deepskyblue", "black", "zbieranie klod!!!!!!!(" & wybor & ")"
 		accelerator "F1", "wez klode\nsp"
 	end if
+end sub
+
+sub koniec_pracy2(a,output, array)
+	world.colournote "deepskyblue", "black", "koniec wycinania!!!!!!!!(" & wybor & ")"
+	accelerator "F1", "otworz plecak\nwloz deski do plecaka\nzamknij plecak\nsp"
 end sub
 
 ]]>
